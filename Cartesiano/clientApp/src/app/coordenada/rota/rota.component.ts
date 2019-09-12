@@ -59,11 +59,14 @@ export class RotaComponent implements OnInit {
     }
 
   onSubmit() {
-    this.retorno = "As coordenadas iniciais ou valores não esão no padrão";
+   this.retorno = "As coordenadas iniciais ou valores não esão no padrão. "
+   this.retorno += " Favor Preencher dois números separados por virgula conforme exemplo Ex. 1,1. ";
 
     if (this.isCoordenadaValida(this.form.controls["coordenadaInicial"].value))
     {
       this.retorno = "As dimensões estão fora dos padrões  ou valores estão incoerentes ";
+      this.retorno += " Favor Preencher a direção e a intensidade separados por virgula e  ";
+      this.retorno += " os pares por ponto e virgula como exemplo N,12;O,10 . ";
 
       if (this.isVetorDirecaoIntensidadeValida(this.form.controls["movimentacoesCoordenadas"].value))
       { 
